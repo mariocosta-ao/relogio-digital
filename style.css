@@ -1,0 +1,78 @@
+@import url("horyzen-regular.ttf");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #dbe4e6;
+}
+
+.clock {
+  width: 520px;
+  padding: 40px;
+  background-color: #f3f3f3;
+  box-shadow: 10px 10px 10px #808080;
+  border-radius: 8px;
+
+  & .display {
+    padding: 40px 10px 10px;
+    border-radius: 6px;
+    background-color: #dddddd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px #fafafa;
+    position: relative;
+
+    & .weekdays {
+      font-size: 16px; /*Aqui a font é Text Me One tamanho 18*/
+      font-weight: 600;
+      width: 100%;
+      top: 10px;
+      left: 0;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+
+      & span {
+        padding: 0 10px;
+        opacity: 0.2;
+      }
+      & span.active {
+        opacity: 1;
+      }
+    }
+
+    & .timeDisplay {
+      display: flex;
+      justify-content: center;
+
+      & .time {
+        font-size: 80px;
+        display: flex;
+        justify-content: center;
+        letter-spacing: 3px;
+        font-family: "horyzen-regular", sans-serif;
+
+        & .dot {
+          animation: piscar 1s linear infinite;
+        }
+      }
+
+      & .format {
+        font-size: 30px;
+        margin-top: 32px;
+        margin-left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+}
+
+@keyframes piscar {
+  25% {
+    opacity: 0;
+  }
+}
